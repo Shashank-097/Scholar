@@ -1,0 +1,193 @@
+export type Lang = "en" | "hi";
+
+const en = {
+  nav: { home: "Home", work: "My Work", read: "Most read", about: "About us", contact: "Contact", menu: "Menu", close: "Close" },
+  hero: {
+    original: "Original", play: "Dive into the research", articles: "latest articles",
+    stby: "STBY", rec: "REC", spec: "4K · 24 fps",
+    statusLive: "Live · streaming research", statusStby: "Standby · press the camera",
+    hintOn: "Streaming live", hintOff: "Press to go live", picker: "Featured articles",
+  },
+  slides: [
+    { tag: "OTT analytics", title: "The changing grammar of the streaming screen", text: "How streaming platforms are changing the way stories are structured, watched, and understood." },
+    { tag: "Adaptation", title: "From page to screen: what adaptation leaves behind", text: "A closer look at the creative choices involved when literary narratives become screen narratives." },
+    { tag: "Spectatorship", title: "Characters, platforms, and contemporary spectatorship", text: "How characters and audiences are being reshaped by the platforms through which stories are consumed." },
+  ],
+  areas: [
+    { n: "01", cat: "Academic research", title: "Papers and Publications", text: "Research exploring cinema, streaming platforms, spectatorship, and the changing culture of digital screens.", article: { lede: "", body: [] as string[] } },
+    { n: "02", cat: "OTT and screen", title: "Critical analysis", text: "Critical readings of films, streaming platforms, genres, characters, audiences, and contemporary screen culture.", article: { lede: "", body: [] as string[] } },
+    { n: "03", cat: "Adaptations", title: "Literature to screen", text: "Examining what changes, disappears, and emerges when stories move from literature into cinema and streaming.", article: { lede: "", body: [] as string[] } },
+    { n: "04", cat: "Media and society", title: "Language and culture", text: "Studying the relationship between technology, platforms, culture, identity, and contemporary spectatorship.", article: { lede: "", body: [] as string[] } },
+  ],
+  areasUi: { read: "Read article", back: "All areas of inquiry", soon: "The full article is on its way.", next: "Next area", prev: "Previous area" },
+  rows: { research: "Explore the research", read: "Most read this week", left: "Scroll left", right: "Scroll right" },
+  teaser: {
+    label: "About us",
+    title: "A space where entertainment meets research.",
+    text: "Screen culture becomes a way of understanding society, through Hindi cinema, web series and OTT narratives.",
+    cta: "Read our story",
+  },
+  contact: {
+    title: "Have a story to investigate?",
+    text: "Have a question, a critical observation or a perspective on a film, web series or digital narrative? We welcome meaningful responses that add depth to the conversation.",
+    cta: "Share your thoughts",
+  },
+  home: {
+    nav: { blogs: "Blogs", resources: "Resources", toLight: "Switch to light mode", toDark: "Switch to dark mode", goHome: "Go to home", toggleMenu: "Toggle menu" },
+    eyebrow: "EXPLORING THE WORLD OF DIGITAL STORYTELLING · 2026",
+    h1: { a: "Beyond", em: "Streaming,", b: "", c: "Into Meaning." },
+    intro: "Critical perspectives on OTT narratives, web series, digital identities, and the changing relationship between screen and society.",
+    screen: { top: "Screen studies / Research", word: "Stories under the lens", line: "OTT.. Narratives..Society", tag: "Literature → Screen" },
+    categories: [
+      "Adaptations - page to frame",
+      "Ott – beyond episodes",
+      "Documentary – unfiltered reality",
+      "Drama – human acts",
+      "Thriller – hidden layers",
+    ],
+    cam: { off: "Click to develop", on: "Now showing · click to close" },
+    marquee: ["OTT History", "Web Series Analysis", "Film Criticism", "Screen Adaptations", "short film analysis"],
+    about: {
+      label: "ABOUT THE RESEARCH PORTAL", h2: ["Reading the screen", "beyond the screen"],
+      p1: "An independent research space dedicated to the critical study of OTT, web series, cinema and screen adaptations.",
+      p2: "Through research papers, critical analysis and scholarly inquiry, the portal explores how digital narratives reflect society, shape cultural identities and engage with the complexities of contemporary life.",
+      p3: "Bringing together screen studies, literary perspectives and cultural criticism, it seeks to understand not only what we watch, but also the ideas, experiences and social realities that unfold through the screen.",
+      cta: "Read our story",
+    },
+    work: { label: "Areas of inquiry", h2: ["Looking at Stories", "Differently"], count: "4 areas of research" },
+    feature: {
+      mini: ["Screen / Studies", "Now", "Contemporary screen culture"], label: "OUR RESEARCH FOCUS", h2: ["What Does the", "Screen Reveal?"],
+      p1: "Every story reflects more than its plot. Through OTT and web series, we explore how language, culture, identity and social realities are represented on screen.",
+      p2: "Our research examines characters, narratives and literary adaptations to understand the ideas and experiences that shape the stories we watch.", cta: "EXPLORE MORE",
+    },
+    articles: {
+      label: "LATEST ARTICLES", h2: ["The Thought", "Journal"],
+      intro: "Ideas, critical reflections and research on OTT, cinema, literature and society.",
+      count: "Featured Articles & Research", cta: "Explore the Articles",
+    },
+    contactHead: { label: "An invitation to engage", h2: ["Your thoughts", "matter.."], note: "" },
+    bigFooter: ["Beyond", "frame"],
+  },
+  footer: { copy: "© 2026 Screen / Studies", name: "Anantika- the screen Journal", tags: "Watch . Read . Analyze . Discuss", top: "Back to top ↑" },
+  about: {
+    label: "About",
+    title: "A space where entertainment meets research, and screen culture becomes a way of understanding society.",
+    lead: "A research-driven digital platform dedicated to Hindi cinema, web series and OTT narratives.",
+    pillars: [
+      { title: "What we bring together", text: "It brings together critical analysis, reviews, research articles and scholarly perspectives on contemporary screen culture." },
+      { title: "What we explore", text: "The platform explores how films and web series reflect society, aspirations, relationships and changing values." },
+      { title: "What we aim for", text: "It aims to bridge the gap between academic research and popular visual culture." },
+      { title: "Who it is for", text: "Designed as a reliable reference space for students, researchers, educators and cinema enthusiasts." },
+    ],
+    closing: "The portal encourages meaningful conversations around the stories that shape and reflect our society.",
+    insideTitle: "Inside the portal",
+    inside: ["Critical reviews", "Research articles", "Thematic studies", "Character analyses", "Episode-based discussion"],
+    approachTitle: "Our approach",
+    approach: [
+      "Stories do not merely play out on the screen; they weave the fabric of our society and life. Through the academic and critical study of Hindi cinema, web series and OTT narratives, this portal seeks to understand the social realities, cultural values, linguistic trends and human experiences expressed in visual stories.",
+      "Here you will find critical reviews, research articles, thematic studies, character analyses and episode-based discussions, alongside an effort to understand the evolving relationship between literature and visual media and to develop new research perspectives on it.",
+      "This portal is a meaningful initiative offering reliable knowledge resources, critical thinking and academic dialogue for students, researchers, teachers and readers interested in cinema and OTT studies. It offers the chance not only to understand and critically evaluate contemporary visual culture, but also to bring forward new questions and perspectives that can open fresh possibilities for further research and dialogue.",
+    ],
+    forTitle: "Made for",
+    forWho: ["Students", "Researchers", "Educators", "Cinema enthusiasts"],
+    author: { name: "NIVEDITA", role: "RESEARCH SCHOLAR (DELHI UNIVERSITY)" },
+  },
+};
+
+export type Dict = typeof en;
+
+const hi: Dict = {
+  nav: { home: "होम", work: "मेरा कार्य", read: "सर्वाधिक पढ़े गए", about: "हमारे बारे में", contact: "संपर्क", menu: "मेनू", close: "बंद करें" },
+  hero: {
+    original: "ओरिजिनल", play: "शोध अध्ययन", articles: "नवीन आलेख",
+    stby: "स्टैंडबाय", rec: "रिकॉर्डिंग", spec: "4K · 24 fps",
+    statusLive: "लाइव · शोध का प्रसारण", statusStby: "स्टैंडबाय · कैमरा दबाएँ",
+    hintOn: "लाइव प्रसारण जारी", hintOff: "लाइव करने के लिए दबाएँ", picker: "चुने हुए लेख",
+  },
+  slides: [
+    { tag: "ओटीटी विश्लेषण", title: "स्ट्रीमिंग स्क्रीन का बदलता व्याकरण", text: "स्ट्रीमिंग प्लेटफ़ॉर्म कहानियों के गठन, देखने और समझने के तरीक़े को कैसे बदल रहे हैं।" },
+    { tag: "रूपांतरण", title: "पन्ने से पर्दे तक: रूपांतरण में क्या पीछे छूट जाता है", text: "जब साहित्यिक आख्यान दृश्य आख्यान बनते हैं, तो उसमें निहित रचनात्मक चयनों पर एक गहरी दृष्टि।" },
+    { tag: "दर्शकत्व", title: "पात्र, प्लेटफ़ॉर्म और समकालीन दर्शकत्व", text: "जिन प्लेटफ़ॉर्मों के माध्यम से कहानियाँ देखी जाती हैं, वे पात्रों और दर्शकों को किस तरह नया आकार दे रहे हैं।" },
+  ],
+  areas: [
+    { n: "01", cat: "शोध एवं लेखन", title: "शोध-पत्र एवं प्रकाशन", text: "सिनेमा, स्ट्रीमिंग प्लेटफ़ॉर्म, दर्शकत्व और डिजिटल स्क्रीन की बदलती संस्कृति पर केंद्रित शोध।", article: { lede: "", body: [] as string[] } },
+    { n: "02", cat: "ओटीटी एवं फ़िल्म विश्लेषण", title: "दृश्य विश्लेषण", text: "फ़िल्मों, स्ट्रीमिंग प्लेटफ़ॉर्मों, विधाओं, पात्रों, दर्शकों और समकालीन स्क्रीन संस्कृति का आलोचनात्मक पाठ।", article: { lede: "", body: [] as string[] } },
+    { n: "03", cat: "साहित्यिक रूपांतरण", title: "साहित्य से पर्दे तक", text: "कहानियाँ जब साहित्य से सिनेमा और स्ट्रीमिंग में जाती हैं, तब क्या बदलता है, क्या खो जाता है और क्या नया उभरता है।", article: { lede: "", body: [] as string[] } },
+    { n: "04", cat: "मीडिया एवं समाज", title: "भाषा एवं संस्कृति", text: "तकनीक, प्लेटफ़ॉर्म, संस्कृति, पहचान और समकालीन दर्शकत्व के आपसी संबंधों का अध्ययन।", article: { lede: "", body: [] as string[] } },
+  ],
+  areasUi: { read: "लेख पढ़ें", back: "सभी शोध क्षेत्र", soon: "पूरा लेख शीघ्र उपलब्ध होगा।", next: "अगला क्षेत्र", prev: "पिछला क्षेत्र" },
+  rows: { research: "शोध के क्षेत्र देखें", read: "इस सप्ताह सर्वाधिक पढ़े गए", left: "बाएँ खिसकाएँ", right: "दाएँ खिसकाएँ" },
+  teaser: {
+    label: "हमारे बारे में",
+    title: "जहाँ मनोरंजन और शोध मिलते हैं।",
+    text: "हिंदी सिनेमा, वेब सीरीज़ और ओटीटी कथानकों के माध्यम से स्क्रीन संस्कृति को समाज समझने का ज़रिया बनाने की पहल।",
+    cta: "हमारी कहानी पढ़ें",
+  },
+  contact: {
+    title: "क्या आपके पास पड़ताल के लिए कोई कहानी है?",
+    text: "सिनेमा, साहित्य और डिजिटल कथाओं को देखने-समझने की आपकी दृष्टि भी महत्त्वपूर्ण है। अपने विचारों, प्रश्नों और आलोचनात्मक टिप्पणियों के साथ इस अकादमिक संवाद का हिस्सा बनें।",
+    cta: "विमर्श में सहभागी बनें",
+  },
+  home: {
+    nav: { blogs: "ब्लॉग", resources: "संसाधन", toLight: "लाइट मोड में जाएँ", toDark: "डार्क मोड में जाएँ", goHome: "होम पर जाएँ", toggleMenu: "मेनू खोलें या बंद करें" },
+    eyebrow: "ओटीटी अध्ययन एवं डिजिटल संस्कृति · 2026",
+    h1: { a: "पर्दे पर", em: "दृश्य,", b: "", c: "समाज के अनेक प्रश्न।" },
+    intro: "इंटरनेट और डिजिटल मीडिया के बढ़ते इस्तेमाल के साथ वेब सीरीज़ और ओटीटी आज कहानियाँ देखने और समझने का एक अहम माध्यम बन गए हैं। यह मंच वेब सीरीज़, डिजिटल कहानियों और उनके अलग-अलग पहलुओं को समझने का प्रयास करता है। इसके माध्यम से समाज, संस्कृति, लैंगिक और अन्य सामाजिक पहचानों से जुड़े सवालों के साथ-साथ साहित्य से पर्दे तक पहुँचने वाली कहानियों और उनके बदलते रूपों का भी अध्ययन किया गया है।",
+    screen: { top: "समकालीन अध्ययन", word: "बदलते दृश्य, बदलता समय", line: "ओटीटी और डिजिटल संस्कृति के नए आयाम", tag: "साहित्य → पर्दा" },
+    categories: [
+      "रूपांतरण — कथा से दृश्य तक",
+      "वेब सीरीज़ — कथा-विस्तार",
+      "डॉक्यूमेंट्री — यथार्थ-दृष्टि",
+      "ड्रामा — कथानुभव",
+      "थ्रिलर — परत-दर-परत",
+    ],
+    cam: { off: "विकसित करने के लिए क्लिक करें", on: "अब प्रदर्शित · बंद करने के लिए क्लिक करें" },
+    marquee: ["ओटीटी का सफ़र", "वेब सीरीज़ विमर्श", "फ़िल्म समीक्षा एवं आलोचना", "साहित्य से पर्दे तक", "लघु फ़िल्म अध्ययन"],
+    about: {
+      label: "शोध पोर्टल के बारे में", h2: ["पर्दे से परे,", "दृष्टि के भीतर"],
+      p1: "यह शोध पोर्टल ओटीटी, वेब सीरीज़, सिनेमा और साहित्यिक कृतियों के दृश्य रूपांतरणों को समझने और उनका आलोचनात्मक अध्ययन करने की एक स्वतंत्र पहल है। शोध-पत्रों, विश्लेषणों और अकादमिक विमर्श के माध्यम से यह मंच उन कथाओं के विविध पक्षों को सामने लाने का प्रयास करता है, जिनमें हमारे समाज, संस्कृति और समकालीन जीवन की झलक दिखाई देती है। साहित्य और दृश्य माध्यमों के बीच के संबंधों को समझते हुए यह पोर्टल केवल प्रस्तुत कथाओं तक सीमित नहीं रहता, बल्कि उनके भीतर निहित विचारों, मानवीय अनुभवों, सामाजिक प्रश्नों और बदलते सांस्कृतिक मूल्यों की पड़ताल भी करता है। इसका उद्देश्य दृश्य कथाओं को केवल देखने की वस्तु नहीं, बल्कि अपने समय और समाज को समझने के एक महत्त्वपूर्ण माध्यम के रूप में देखना है।",
+      p2: "",
+      p3: "",
+      cta: "हमारी कहानी पढ़ें",
+    },
+    work: { label: "कथाओं को देखने की एक नई दृष्टि", h2: ["दृश्य, विचार", "और नए संदर्भ"], count: "शोध के 4 क्षेत्र" },
+    feature: {
+      mini: ["Screen / Studies", "अभी", "समकालीन स्क्रीन संस्कृति"], label: "हमारा शोध-केंद्र", h2: ["कहानियाँ बदल रही हैं।", "उन्हें देखने के तरीके भी।"],
+      p1: "डिजिटल माध्यमों ने कथाओं के निर्माण, प्रस्तुति और दर्शकों तक उनकी पहुँच के तरीकों को नया रूप दिया है। ओटीटी के विस्तार के साथ देखने की आदतें, विषयों की विविधता और कहानियों से जुड़ने के अनुभव भी बदल रहे हैं।",
+      p2: "यहाँ इन्हीं बदलावों को समझने का प्रयास किया गया है—कि डिजिटल मंच हमारी पसंद, सांस्कृतिक अभिव्यक्तियों और समकालीन समाज को किस तरह प्रभावित कर रहे हैं।", cta: "शोध से जुड़े",
+    },
+    articles: {
+      label: "नवीनतम लेख", h2: ["दृष्टि के", "नए संदर्भ"],
+      intro: "ओटीटी, सिनेमा, साहित्य और समाज को समझने की आलोचनात्मक दृष्टि।",
+      count: "चयनित आलेख एवं शोध-अध्ययन", cta: "शोध संसार",
+    },
+    contactHead: { label: "विचार एवं संवाद", h2: ["आपकी दृष्टि,", "एक नया संदर्भ"], note: "कुछ विचार संवाद को नई दिशा देते हैं।" },
+    bigFooter: ["अनकही", "परतें"],
+  },
+  footer: { copy: "© 2026 Screen / Studies", name: "अनंतिका : द स्क्रीन जर्नल", tags: "देखें • पढ़ें • परखें • विचारें", top: "ऊपर जाएँ ↑" },
+  about: {
+    label: "हमारे बारे में",
+    title: "दृश्य कथानकों के माध्यम से समाज, संस्कृति और समकालीन जीवन को समझने की एक शोधपरक पहल।",
+    lead: "हिंदी सिनेमा, वेब सीरीज़ और ओटीटी कथानकों को समर्पित एक शोध-आधारित डिजिटल मंच।",
+    pillars: [
+      { title: "हम क्या साथ लाते हैं", text: "आलोचनात्मक विश्लेषण, समीक्षाएँ, शोध आलेख और समकालीन स्क्रीन संस्कृति पर अकादमिक दृष्टिकोण।" },
+      { title: "हम क्या खोजते हैं", text: "फ़िल्में और वेब सीरीज़ समाज, आकांक्षाओं, रिश्तों और बदलते मूल्यों को किस तरह प्रतिबिंबित करती हैं।" },
+      { title: "हमारा उद्देश्य", text: "अकादमिक शोध और लोकप्रिय दृश्य संस्कृति के बीच की दूरी को पाटना।" },
+      { title: "यह किनके लिए है", text: "विद्यार्थियों, शोधार्थियों, शिक्षकों और सिनेमा-प्रेमियों के लिए एक विश्वसनीय संदर्भ-स्थल।" },
+    ],
+    closing: "यह पोर्टल उन कहानियों पर सार्थक संवाद को प्रोत्साहित करता है जो हमारे समाज को गढ़ती और उसे प्रतिबिंबित करती हैं।",
+    insideTitle: "पोर्टल में क्या है",
+    inside: ["आलोचनात्मक समीक्षाएँ", "शोध आलेख", "विषयपरक अध्ययन", "चरित्र विश्लेषण", "एपिसोड-आधारित विवेचन"],
+    approachTitle: "हमारा दृष्टिकोण",
+    approach: [
+      "कहानियाँ केवल पर्दे पर नहीं चलतीं, वे हमारे समाज और जीवन का ताना-बाना बुनती हैं। यह पोर्टल हिंदी सिनेमा, वेब सीरीज़ और ओटीटी कथानकों के अकादमिक एवं आलोचनात्मक अध्ययन के माध्यम से उन सामाजिक यथार्थों, सांस्कृतिक मूल्यों, भाषायी प्रवृत्तियों और मानवीय अनुभवों को समझने का प्रयास है, जो दृश्य कथाओं में अभिव्यक्त होते हैं।",
+      "यहाँ आलोचनात्मक समीक्षाओं, शोध आलेखों, विषयपरक अध्ययनों, चरित्र विश्लेषणों और एपिसोड-आधारित विवेचन के साथ-साथ साहित्य और दृश्य माध्यमों के बीच विकसित होते अंतर्संबंधों को समझने तथा उन पर नए शोधपरक दृष्टिकोण विकसित करने का प्रयास किया गया है।",
+      "यह पोर्टल विद्यार्थियों, शोधार्थियों, शिक्षकों और सिनेमा एवं ओटीटी अध्ययन में रुचि रखने वाले पाठकों के लिए विश्वसनीय ज्ञान-संसाधन, आलोचनात्मक चिंतन और अकादमिक संवाद की एक सार्थक पहल है। इसके माध्यम से न केवल समकालीन दृश्य संस्कृति को समझने और उसका आलोचनात्मक मूल्यांकन करने का अवसर मिलता है, बल्कि ऐसे नए प्रश्नों और दृष्टिकोणों को भी सामने लाने का प्रयास किया गया है, जो आगे के शोध और संवाद के लिए नई संभावनाएँ खोल सकें।",
+    ],
+    forTitle: "इनके लिए",
+    forWho: ["विद्यार्थी", "शोधार्थी", "शिक्षक", "सिनेमा-प्रेमी"],
+    author: { name: "निवेदिता", role: "शोधार्थी (दिल्ली विश्वविद्यालय)" },
+  },
+};
+
+export const dict: Record<Lang, Dict> = { en, hi };

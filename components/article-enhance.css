@@ -1,0 +1,109 @@
+/* Article pages: hero, reading column, contents list, pull quotes, pager.
+   Uses your theme variables with fallbacks, so light/dark mode keeps working.
+   Import is already in ArticlePage.tsx. This file replaces the previous article-enhance.css. */
+
+.articlePage { scroll-padding-top: 96px; }
+.articlePage ::selection { background: var(--red, #861f2d); color: #fff; }
+
+/* ---------- hero ---------- */
+.articleHero { min-height: 72vh; }
+.articleHeroMedia { will-change: transform; }
+.articleHeroMedia::after {
+  background:
+    radial-gradient(ellipse at 20% 100%, rgba(134, 31, 45, .45), transparent 60%),
+    linear-gradient(to bottom, rgba(26, 19, 17, .2), rgba(26, 19, 17, .94));
+}
+.articleHeroText { will-change: transform, opacity; }
+.articleHero h1 { text-wrap: balance; letter-spacing: -0.03em; }
+html[lang="hi"] .articleHero h1 { letter-spacing: 0; line-height: 1.2; }
+/* each title word slides up from behind a mask */
+.articleHero h1 .w { display: inline-block; overflow: hidden; vertical-align: top; padding: .04em 0 .14em; margin-bottom: -.14em; }
+.articleHero h1 .w > span { display: inline-block; will-change: transform; }
+
+.articleBack { transition: letter-spacing .35s, color .3s; }
+.articleBack:hover { letter-spacing: .2em; color: #f4dca0; }
+.articleKicker strong { position: relative; }
+.articleKicker strong::after { content: ""; position: absolute; left: 0; right: -10px; bottom: -6px; height: 1px; background: currentColor; transform-origin: left; animation: kickerLine 1.2s .6s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes kickerLine { from { transform: scaleX(0); } }
+
+.heroScroll { position: absolute; left: 50%; bottom: 18px; width: 1px; height: 44px; background: rgba(255, 242, 223, .25); overflow: hidden; z-index: 1; }
+.heroScroll i { display: block; width: 100%; height: 50%; background: #d8b976; animation: scrollCue 2s ease-in-out infinite; }
+@keyframes scrollCue { from { transform: translateY(-100%); } to { transform: translateY(200%); } }
+
+/* hero meta row: read time + copy link */
+.articleMeta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 22px; font-size: 14px; color: inherit; opacity: .9; }
+.articleMeta button { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border: 1px solid currentColor; border-radius: 99px; background: transparent; color: inherit; font: inherit; font-size: 13px; cursor: pointer; transition: background .25s, color .25s, border-color .25s, transform .25s; }
+.articleMeta button:hover { background: var(--red, #861f2d); border-color: var(--red, #861f2d); color: #fff; transform: translateY(-2px); }
+
+/* ---------- layout: contents sidebar + reading column ---------- */
+.articleLayout { --read: 0; display: block; padding: 0 5vw; }
+.articleLayout.hasToc { display: grid; grid-template-columns: 220px minmax(0, 720px); justify-content: center; gap: 5vw; align-items: start; }
+.articleLayout .articleBody { margin-inline: auto; padding-inline: 0; }
+.articleLayout.hasToc .articleBody { margin: 0; }
+
+.articleToc { position: sticky; top: 110px; padding-top: 70px; font-size: 14px; }
+.articleToc strong { display: block; margin-bottom: 16px; font: 600 11px/1.3 monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--muted, #685a54); }
+.articleToc ol { margin: 0; padding: 0; list-style: none; }
+.articleToc button { display: block; width: 100%; padding: 8px 0 8px 18px; border: 0; background: none; text-align: left; font: inherit; line-height: 1.4; color: var(--muted, #685a54); cursor: pointer; transition: color .25s, padding .3s cubic-bezier(.2,.8,.2,1); }
+.articleToc button:hover { color: var(--ink, #211714); padding-left: 22px; }
+.articleToc button.on { color: var(--red, #861f2d); padding-left: 22px; font-weight: 600; }
+/* vertical track on the left that fills as you read */
+.articleToc { position: sticky; }
+.articleToc .tocBar { position: absolute; left: 0; top: 101px; bottom: 0; width: 2px; background: var(--line, #cdbba9); border-radius: 2px; overflow: hidden; max-height: calc(100% - 101px); }
+.articleToc .tocBar i { display: block; width: 100%; height: 100%; background: var(--red, #861f2d); transform: scaleY(var(--read, 0)); transform-origin: top; will-change: transform; }
+
+/* ---------- reading comfort ---------- */
+.articleBody { line-height: 1.85; padding-top: 72px; }
+.articleBody h2 { scroll-margin-top: 110px; text-wrap: balance; position: relative; padding-top: 12px; }
+.articleBody h2::before { content: ""; display: block; width: 44px; height: 3px; margin-bottom: 18px; background: var(--red, #861f2d); border-radius: 3px; }
+.articleBody p:not(.articleLede) { max-width: 68ch; text-wrap: pretty; }
+html[lang="hi"] .articleBody p { line-height: 2; }
+.articleBody p.articleLede { font-size: clamp(20px, 2.1vw, 26px); line-height: 1.55; padding-left: 20px; border-left: 3px solid var(--red, #861f2d); }
+html[lang="en"] .articleBody p.articleLede + p::first-letter { float: left; margin: .08em .12em 0 0; font: 700 3.4em/.8 Georgia, serif; color: var(--red, #861f2d); }
+
+/* pull quote: write "> text" in the article body */
+.articleBody blockquote { --bar: 1; position: relative; margin: 2.4em 0; padding: 6px 0 6px 30px; }
+.articleBody blockquote::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--red, #861f2d); transform: scaleY(var(--bar)); transform-origin: top; }
+.articleBody blockquote::after { content: "“"; position: absolute; left: 22px; top: -34px; font: 700 110px/1 Georgia, serif; color: var(--red, #861f2d); opacity: .12; pointer-events: none; }
+.articleBody blockquote p { margin: 0; max-width: 56ch; font: italic 400 clamp(22px, 2.6vw, 30px)/1.45 Georgia, serif; letter-spacing: -.01em; color: var(--ink, #211714); }
+
+/* end-of-article ornament */
+.articleEnd { display: flex; align-items: center; gap: 16px; margin: 56px 0 8px; color: var(--gold, #b28a48); }
+.articleEnd span { flex: 1; height: 1px; background: var(--line, #cdbba9); }
+.articleEnd b { font-size: 14px; }
+
+/* ---------- pager: neighbouring areas as image cards ---------- */
+.articlePager { max-width: 1100px; margin: 56px auto 0; padding: 0 24px 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.articlePager a { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; min-height: 190px; padding: 24px 26px; border: 1px solid rgba(255, 242, 223, .14); border-radius: 16px; background: #1a1311; color: #fff8f1; text-decoration: none; box-shadow: 0 22px 44px -28px rgba(0, 0, 0, .7); transition: transform .45s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .35s; }
+.articlePager a:hover { transform: translateY(-5px); border-color: rgba(216, 185, 118, .7); box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .85), 0 0 40px -14px rgba(216, 185, 118, .4); }
+.articlePager a.next { text-align: right; }
+.pagerMedia { position: absolute; inset: 0; z-index: -1; transition: transform 1.1s cubic-bezier(.2,.7,.2,1); }
+.pagerMedia > * { display: block; width: 100%; height: 100%; object-fit: cover; }
+.pagerMedia .posterWall { height: 100%; }
+.pagerMedia::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26, 19, 17, .92), rgba(26, 19, 17, .35) 70%); }
+.articlePager a:hover .pagerMedia { transform: scale(1.06); }
+.articlePager small { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: #d8b976; }
+.articlePager span { font-size: clamp(1.2rem, 2vw, 1.6rem); line-height: 1.2; }
+
+/* footer helpers under the pager */
+.articleFoot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 0 5vw 40px; font-size: 13px; color: var(--muted, #685a54); }
+.articleFoot button { border: 0; background: none; color: inherit; font: inherit; cursor: pointer; transition: color .25s, transform .25s; }
+.articleFoot button:hover { color: var(--red, #861f2d); transform: translateY(-2px); }
+
+@media (max-width: 1000px) {
+  .articleLayout.hasToc { display: block; }
+  .articleToc { display: none; }
+  .articleBody { padding-top: 48px; }
+}
+@media (max-width: 640px) {
+  .articleHero { min-height: 64vh; }
+  .articlePager { grid-template-columns: 1fr; }
+  .articlePager a { min-height: 150px; }
+  .articleBody blockquote { padding-left: 22px; }
+}
+@media (hover: none) { .articleFoot span { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .articleMeta button, .articlePager a, .articleToc button, .pagerMedia, .articleBack { transition: none; }
+  .heroScroll i, .articleKicker strong::after { animation: none; }
+  .articleHero h1 .w > span { transform: none !important; }
+}
